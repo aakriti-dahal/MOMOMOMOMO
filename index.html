@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Momo Odyssey | Authentic Himalayan Dumpling Recipes & Craft</title>
+  <meta name="description" content="Master the art of Himalayan dumplings: Authentic recipes and step-by-step techniques for Veg Momo, C Momo, Kothey Momo, and Jhol Momo. Includes interactive servings scaler and steaming timer.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;0,900;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Background Ambient Glow & Floating Elements -->
+  <div class="ambient-glow glow-1"></div>
+  <div class="ambient-glow glow-2"></div>
+
+  <!-- Navigation Bar -->
+  <header class="site-header" id="top">
+    <div class="header-container">
+      <a href="#top" class="logo">
+        <span class="logo-icon">🥟</span>
+        <div class="logo-text">
+          <span class="brand-title">Momo Odyssey</span>
+          <span class="brand-tagline">Himalayan Culinary Art</span>
+        </div>
+      </a>
+
+      <nav class="nav-menu" id="nav-menu">
+        <a href="#recipes" class="nav-link">Recipes</a>
+        <a href="#pleating" class="nav-link">Pleating Guide</a>
+        <a href="#chutneys" class="nav-link">Achaar & Jhol</a>
+        <a href="#timer-section" class="nav-link">Steaming Timer</a>
+        <a href="#secrets" class="nav-link">Chef's Secrets</a>
+      </nav>
+
+      <div class="header-actions">
+        <button id="sound-toggle-btn" class="icon-btn" title="Toggle Kitchen Audio Chime" aria-label="Toggle kitchen timer sound">
+          <span class="icon" id="sound-icon">🔔</span>
+        </button>
+        <a href="#recipes" class="btn btn-primary btn-sm">Explore Recipes</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section with Canvas Steam & Interactive Spotlight -->
+  <main>
+    <section class="hero-section">
+      <!-- Interactive Steam Canvas for Rising Vapor -->
+      <canvas id="hero-steam-canvas"></canvas>
+      
+      <div class="hero-content">
+        <div class="hero-badge">
+          <span class="badge-dot"></span>
+          <span>Traditional Kathmandu Valley & Himalayan Craft</span>
+        </div>
+        <h1 class="hero-title">
+          Master the Soul of <span class="gradient-text">Himalayan Momos</span>
+        </h1>
+        <p class="hero-description">
+          From translucent steaming bamboo baskets to crackling pan-seared bottoms, fiery wok sizzlers, and comforting sesame-timur broths. Discover authentic master recipes with interactive kitchen tools.
+        </p>
+
+        <div class="hero-cta-group">
+          <a href="#recipes" class="btn btn-primary">
+            <span>Browse 4 Master Recipes</span>
+            <span class="btn-arrow">→</span>
+          </a>
+          <a href="#timer-section" class="btn btn-secondary">
+            <span>⏱️ Open Cooking Timer</span>
+          </a>
+        </div>
+
+        <div class="hero-stats">
+          <div class="stat-card">
+            <span class="stat-number">4</span>
+            <span class="stat-label">Iconic Styles</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-card">
+            <span class="stat-number">100%</span>
+            <span class="stat-label">Authentic Spices</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-card">
+            <span class="stat-number">3</span>
+            <span class="stat-label">Artisan Folds</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-card">
+            <span class="stat-number">12 min</span>
+            <span class="stat-label">Steamed to Perfection</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="hero-image-wrapper">
+          <img src="images/veg_momo.jpg" alt="Steamed Veg Momos in Bamboo Steamer" id="hero-feature-img" class="hero-img">
+          <div class="hero-image-overlay">
+            <div class="dish-tag">
+              <span class="dish-tag-icon">🌿</span>
+              <div>
+                <h4>Classic Steamed Veg Momo</h4>
+                <p>Bamboo-steamed with aromatic sesame tomato achaar</p>
+              </div>
+            </div>
+            <div class="steam-indicator" id="interactive-steam-trigger">
+              <span class="pulse-ring"></span>
+              <span>♨️ Freshly Steamed</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Recipe Showcase Section -->
+    <section class="section recipes-section" id="recipes">
+      <div class="section-header">
+        <span class="section-subtitle">The Collection</span>
+        <h2 class="section-title">Four Legendary Ways to Relish Momos</h2>
+        <p class="section-desc">Each style honors a distinct textural experience—delicately steamed, fiery chili tossed, golden pan-crisped, or drenched in nutty timur broth.</p>
+        
+        <!-- Interactive Filter Controls -->
+        <div class="filter-tabs">
+          <button class="filter-tab active" data-filter="all">All Styles (4)</button>
+          <button class="filter-tab" data-filter="steamed">Steamed</button>
+          <button class="filter-tab" data-filter="chilli">Chilli Wok</button>
+          <button class="filter-tab" data-filter="pan-fried">Crispy Bottom</button>
+          <button class="filter-tab" data-filter="broth">Soup / Jhol</button>
+        </div>
+      </div>
+
+      <!-- Recipe Cards Grid -->
+      <div class="recipes-grid" id="recipes-grid">
+        
+        <!-- Recipe 1: Veg Steamed Momo -->
+        <article class="recipe-card" data-category="steamed" id="card-veg-momo">
+          <div class="card-media">
+            <img src="images/veg_momo.jpg" alt="Nepalese Steamed Vegetable Momos" loading="lazy">
+            <div class="card-badges">
+              <span class="badge badge-nature">🌿 Classic Veg</span>
+              <span class="badge badge-steam">♨️ Steamed</span>
+            </div>
+            <button class="card-quick-timer-btn" data-time="11" title="Set 11 min steam timer">⏱️ 11 min</button>
+          </div>
+          <div class="card-body">
+            <div class="card-meta">
+              <span class="meta-item">⏱️ Prep: 40m</span>
+              <span class="meta-item">🔥 Steam: 11m</span>
+              <span class="meta-item">🌶️ Mild / Savory</span>
+            </div>
+            <h3 class="card-title">Classic Steamed Veg Momo</h3>
+            <p class="card-excerpt">
+              Delicate hand-pleated dumplings packed with finely minced cabbage, carrots, red onions, garlic, ginger, and aromatic Himalayan spices. Served hot with homemade sesame-tomato achaar.
+            </p>
+            <div class="card-highlights">
+              <span class="highlight-chip">Crisp Cabbage & Carrots</span>
+              <span class="highlight-chip">Ginger-Garlic Punch</span>
+              <span class="highlight-chip">Toasted Coriander</span>
+            </div>
+            <div class="card-footer">
+              <button class="btn btn-outline open-recipe-btn" data-recipe-id="veg-momo">
+                View Full Recipe & Scaler →
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Recipe 2: C Momo (Chilli Momo) -->
+        <article class="recipe-card" data-category="chilli" id="card-c-momo">
+          <div class="card-media">
+            <img src="images/c_momo.jpg" alt="Fiery Nepalese C Momo Chilli Dumplings" loading="lazy">
+            <div class="card-badges">
+              <span class="badge badge-spice">🔥 Spicy Sizzler</span>
+              <span class="badge badge-wok">🥢 Wok-Tossed</span>
+            </div>
+            <button class="card-quick-timer-btn" data-time="4" title="Set 4 min wok sauce timer">⏱️ 4 min</button>
+          </div>
+          <div class="card-body">
+            <div class="card-meta">
+              <span class="meta-item">⏱️ Prep: 15m</span>
+              <span class="meta-item">🔥 Wok: 5m</span>
+              <span class="meta-item">🌶️🌶️🌶️ Fiery & Tangy</span>
+            </div>
+            <h3 class="card-title">Fiery C Momo (Chilli Momo)</h3>
+            <p class="card-excerpt">
+              Golden pan-crisped or steamed dumplings tossed vigorously in a smoking hot wok with sweet and spicy chili garlic paste, crunchy bell peppers, caramelized red onions, and scallions.
+            </p>
+            <div class="card-highlights">
+              <span class="highlight-chip">Fiery Garlic-Chili Glaze</span>
+              <span class="highlight-chip">Charred Bell Peppers</span>
+              <span class="highlight-chip">Spring Onion Crunch</span>
+            </div>
+            <div class="card-footer">
+              <button class="btn btn-outline open-recipe-btn" data-recipe-id="c-momo">
+                View Full Recipe & Scaler →
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Recipe 3: Kothey Momo -->
+        <article class="recipe-card" data-category="pan-fried" id="card-kothey-momo">
+          <div class="card-media">
+            <img src="images/kothey_momo.jpg" alt="Crispy Bottom Kothey Momos" loading="lazy">
+            <div class="card-badges">
+              <span class="badge badge-gold">✨ Crispy Bottom</span>
+              <span class="badge badge-pan">🍳 Potsticker Style</span>
+            </div>
+            <button class="card-quick-timer-btn" data-time="8" title="Set 8 min sear & steam timer">⏱️ 8 min</button>
+          </div>
+          <div class="card-body">
+            <div class="card-meta">
+              <span class="meta-item">⏱️ Prep: 35m</span>
+              <span class="meta-item">🔥 Pan-Sear: 8m</span>
+              <span class="meta-item">🌶️ Medium Spiced</span>
+            </div>
+            <h3 class="card-title">Crispy Kothey Momo</h3>
+            <p class="card-excerpt">
+              Signature crescent dumplings pan-seared in sesame oil till the bottoms form an irresistible golden-brown crackling lace, followed by a quick lid-steam to lock in juicy tenderness.
+            </p>
+            <div class="card-highlights">
+              <span class="highlight-chip">Golden Caramelized Base</span>
+              <span class="highlight-chip">Steamed Juicy Crown</span>
+              <span class="highlight-chip">Toasted Sesame Crunch</span>
+            </div>
+            <div class="card-footer">
+              <button class="btn btn-outline open-recipe-btn" data-recipe-id="kothey-momo">
+                View Full Recipe & Scaler →
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Recipe 4: Jhol Momo -->
+        <article class="recipe-card" data-category="broth" id="card-jhol-momo">
+          <div class="card-media">
+            <img src="images/jhol_momo.jpg" alt="Authentic Jhol Momo in Sesame Tomato Broth" loading="lazy">
+            <div class="card-badges">
+              <span class="badge badge-soup">🥣 Sesame Broth</span>
+              <span class="badge badge-timur">✨ Himalayan Timur</span>
+            </div>
+            <button class="card-quick-timer-btn" data-time="12" title="Set 12 min broth simmer timer">⏱️ 12 min</button>
+          </div>
+          <div class="card-body">
+            <div class="card-meta">
+              <span class="meta-item">⏱️ Prep: 30m</span>
+              <span class="meta-item">🔥 Simmer: 12m</span>
+              <span class="meta-item">🌶️🌶️ Tangy & Nutty</span>
+            </div>
+            <h3 class="card-title">Royal Jhol Momo</h3>
+            <p class="card-excerpt">
+              Piping hot steamed dumplings submerged in an artisanal, golden-hued soup made from roasted tomatoes, toasted white sesame seeds, roasted soybean, fresh lemon, and citrusy Timur pepper.
+            </p>
+            <div class="card-highlights">
+              <span class="highlight-chip">Roasted Sesame & Timur</span>
+              <span class="highlight-chip">Warm Tangy Broth</span>
+              <span class="highlight-chip">Fresh Cilantro Garnish</span>
+            </div>
+            <div class="card-footer">
+              <button class="btn btn-outline open-recipe-btn" data-recipe-id="jhol-momo">
+                View Full Recipe & Scaler →
+              </button>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- Pleating Technique Masterclass Section -->
+    <section class="section pleating-section" id="pleating">
+      <div class="section-header">
+        <span class="section-subtitle">Artisan Craftsmanship</span>
+        <h2 class="section-title">The Art of the Momo Pleat</h2>
+        <p class="section-desc">The fold determines texture, steam circulation, and the visual elegance of your dumpling. Master all three authentic Himalayan techniques.</p>
+      </div>
+
+      <div class="pleating-container">
+        <div class="pleat-selector">
+          <button class="pleat-btn active" data-pleat="round">
+            <span class="pleat-btn-icon">🥟</span>
+            <div class="pleat-btn-info">
+              <strong>Round Pouch (Pokha)</strong>
+              <span>Classic for Steamed & Jhol</span>
+            </div>
+          </button>
+          <button class="pleat-btn" data-pleat="crescent">
+            <span class="pleat-btn-icon">🌙</span>
+            <div class="pleat-btn-info">
+              <strong>Crescent Half-Moon</strong>
+              <span>Essential for Kothey Seared Bottom</span>
+            </div>
+          </button>
+          <button class="pleat-btn" data-pleat="leaf">
+            <span class="pleat-btn-icon">🍃</span>
+            <div class="pleat-btn-info">
+              <strong>Fish-Scale / Leaf Pleat</strong>
+              <span>Gourmet banquets & delicate wrappers</span>
+            </div>
+          </button>
+        </div>
+
+        <div class="pleat-display-card" id="pleat-display">
+          <div class="pleat-visual-box">
+            <div class="pleat-diagram" id="pleat-diagram-icon">🥟</div>
+            <div class="pleat-step-counter" id="pleat-step-label">Difficulty: Moderate | Pleats: 14-18</div>
+          </div>
+          <div class="pleat-instructions">
+            <h3 id="pleat-title">The Classic Round Pouch Pleat</h3>
+            <p id="pleat-desc" class="pleat-lead">
+              The iconic Kathmandu Valley dumpling fold. Gather small uniform pleats in a circular motion around the filling, then pinch tight at the crown like a gathered pouch.
+            </p>
+            <div class="pleat-steps-list" id="pleat-steps">
+              <div class="step-item">
+                <span class="step-badge">1</span>
+                <p>Cup the rolled wrapper (3-inch diameter, thin edges, thicker center) in your non-dominant palm.</p>
+              </div>
+              <div class="step-item">
+                <span class="step-badge">2</span>
+                <p>Place 1 heaped tablespoon of chilled vegetable filling right into the center.</p>
+              </div>
+              <div class="step-item">
+                <span class="step-badge">3</span>
+                <p>Using thumb and index finger, make your first accordion pleat. Pinch together firmly.</p>
+              </div>
+              <div class="step-item">
+                <span class="step-badge">4</span>
+                <p>Continue rotating the dumpling 360°, gathering 14 to 18 clockwise pleats into a spiral crown.</p>
+              </div>
+              <div class="step-item">
+                <span class="step-badge">5</span>
+                <p>Twist gently at the top to seal completely, or leave a pinpoint breathing chimney for steam release.</p>
+              </div>
+            </div>
+            <div class="pleat-tip-box" id="pleat-tip">
+              💡 <strong>Pro Tip:</strong> Keep the edges slightly thinner than the center so the gathered crown cooks at the exact same rate as the base.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Traditional Achaar (Sauce) & Jhol Broth Section -->
+    <section class="section chutneys-section" id="chutneys">
+      <div class="section-header">
+        <span class="section-subtitle">Dipping Perfection</span>
+        <h2 class="section-title">The Essential Achaars & Broths</h2>
+        <p class="section-desc">No momo experience is complete without its soulmate dipping sauce. From nutty roasted sesame to citrusy Timur.</p>
+      </div>
+
+      <div class="chutneys-grid">
+        <!-- Chutney 1 -->
+        <div class="chutney-card">
+          <div class="chutney-header">
+            <span class="chutney-icon">🍅</span>
+            <div>
+              <h3>Golbheda Til Achaar</h3>
+              <span class="chutney-tag">Roasted Tomato & White Sesame</span>
+            </div>
+          </div>
+          <p class="chutney-text">
+            The national dipping sauce of Nepal. Charred ripe tomatoes blended with golden roasted sesame seeds, garlic, green chilies, mustard oil, and freshly squeezed lemon juice.
+          </p>
+          <div class="chutney-flavor-bars">
+            <div class="flavor-row"><span>Nutty Sesame</span><div class="bar-fill" style="width: 95%"></div></div>
+            <div class="flavor-row"><span>Tangy Lime</span><div class="bar-fill" style="width: 80%"></div></div>
+            <div class="flavor-row"><span>Spice Heat</span><div class="bar-fill" style="width: 65%"></div></div>
+          </div>
+          <div class="best-paired">
+            <strong>Best paired with:</strong> Classic Steamed Veg Momo & Kothey
+          </div>
+        </div>
+
+        <!-- Chutney 2 -->
+        <div class="chutney-card">
+          <div class="chutney-header">
+            <span class="chutney-icon">🌶️</span>
+            <div>
+              <h3>Dalle Khursani Fire Chutney</h3>
+              <span class="chutney-tag">Himalayan Round Cherry Pepper</span>
+            </div>
+          </div>
+          <p class="chutney-text">
+            For extreme spice enthusiasts. Fermented or fresh fiery Himalayan Dalle chilies crushed with charred garlic cloves, Himalayan pink salt, cumin, and cold-pressed mustard oil.
+          </p>
+          <div class="chutney-flavor-bars">
+            <div class="flavor-row"><span>Spice Heat</span><div class="bar-fill" style="width: 100%"></div></div>
+            <div class="flavor-row"><span>Garlic Punch</span><div class="bar-fill" style="width: 85%"></div></div>
+            <div class="flavor-row"><span>Smokiness</span><div class="bar-fill" style="width: 75%"></div></div>
+          </div>
+          <div class="best-paired">
+            <strong>Best paired with:</strong> C Momo glaze & Crispy Kothey
+          </div>
+        </div>
+
+        <!-- Chutney 3 -->
+        <div class="chutney-card">
+          <div class="chutney-header">
+            <span class="chutney-icon">🥣</span>
+            <div>
+              <h3>Kathmandu Royal Jhol Soup</h3>
+              <span class="chutney-tag">Nutty Sesame Timur Broth</span>
+            </div>
+          </div>
+          <p class="chutney-text">
+            Liquid gold. Roasted sesame paste blended with fire-roasted tomatoes, yellow soybeans (bhatmas), coriander seeds, and tingling Timur (Sichuan pepper), thinned with savory vegetable broth.
+          </p>
+          <div class="chutney-flavor-bars">
+            <div class="flavor-row"><span>Timur Numbing Tingle</span><div class="bar-fill" style="width: 90%"></div></div>
+            <div class="flavor-row"><span>Comfort Warmth</span><div class="bar-fill" style="width: 100%"></div></div>
+            <div class="flavor-row"><span>Nutty Creaminess</span><div class="bar-fill" style="width: 90%"></div></div>
+          </div>
+          <div class="best-paired">
+            <strong>Best paired with:</strong> Steamed dumplings poured directly on top
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Built-in Kitchen Steaming & Cooking Timer -->
+    <section class="section timer-section" id="timer-section">
+      <div class="timer-container">
+        <div class="timer-info-col">
+          <span class="section-subtitle">Precision Cooking</span>
+          <h2 class="section-title">Interactive Kitchen Steaming Timer</h2>
+          <p class="section-desc">
+            Overcooking makes momo wrappers gummy and soggy, while undercooking leaves raw dough. Use our precision timer calibrated for steam pressure and pan-searing.
+          </p>
+
+          <div class="timer-presets">
+            <h4>Quick Presets</h4>
+            <div class="preset-buttons">
+              <button class="preset-btn active" data-preset-seconds="660" data-label="Steaming Veg Momo (11 min)">
+                ♨️ Steaming (11m)
+              </button>
+              <button class="preset-btn" data-preset-seconds="480" data-label="Kothey Pan-Sear & Steam (8 min)">
+                🍳 Kothey Sear (8m)
+              </button>
+              <button class="preset-btn" data-preset-seconds="240" data-label="C Momo Wok Glazing (4 min)">
+                🥢 Wok Sizzle (4m)
+              </button>
+              <button class="preset-btn" data-preset-seconds="1200" data-label="Dough Resting Time (20 min)">
+                🌾 Dough Rest (20m)
+              </button>
+            </div>
+          </div>
+
+          <div class="timer-guide-callout">
+            <strong>💡 How to tell when momos are done:</strong>
+            <p>The skin turns glossy and slightly translucent, firm to a light finger touch without sticking to your skin.</p>
+          </div>
+        </div>
+
+        <div class="timer-clock-col">
+          <div class="timer-card">
+            <div class="timer-ring-container">
+              <svg class="timer-svg" viewBox="0 0 240 240">
+                <circle class="timer-circle-bg" cx="120" cy="120" r="100"></circle>
+                <circle class="timer-circle-progress" id="timer-progress-circle" cx="120" cy="120" r="100"></circle>
+              </svg>
+              <div class="timer-display-inner">
+                <span class="timer-time" id="timer-digits">11:00</span>
+                <span class="timer-activity-label" id="timer-current-preset">Steaming Veg Momo</span>
+                <span class="timer-status-chip" id="timer-status">Ready</span>
+              </div>
+            </div>
+
+            <div class="timer-controls">
+              <button class="btn btn-primary timer-btn" id="timer-start-btn">▶ Start</button>
+              <button class="btn btn-secondary timer-btn" id="timer-pause-btn" disabled>⏸ Pause</button>
+              <button class="btn btn-outline timer-btn" id="timer-reset-btn">↺ Reset</button>
+            </div>
+
+            <div class="timer-custom-inputs">
+              <label for="custom-min">Custom Minutes:</label>
+              <input type="number" id="custom-min" min="1" max="60" value="11" class="timer-number-input">
+              <button id="set-custom-timer-btn" class="btn btn-sm btn-outline">Set</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Chef's Golden Secrets & FAQ Section -->
+    <section class="section secrets-section" id="secrets">
+      <div class="section-header">
+        <span class="section-subtitle">Culinary Wisdom</span>
+        <h2 class="section-title">Chef’s Golden Secrets for Flawless Momos</h2>
+        <p class="section-desc">Avoid sticky bottoms, dry fillings, and torn skins with these restaurant-tested secrets.</p>
+      </div>
+
+      <div class="secrets-grid">
+        <div class="secret-card">
+          <div class="secret-num">01</div>
+          <h3>The Moisture Balance</h3>
+          <p>
+            Finely grate cabbage and squeeze out the excess liquid with a pinch of salt. Squeezing prevents the raw filling from releasing water inside the wrapper, which creates soggy, leaking dumplings.
+          </p>
+        </div>
+
+        <div class="secret-card">
+          <div class="secret-num">02</div>
+          <h3>The Juicy Fat Secret</h3>
+          <p>
+            Vegetable momo filling needs fat to stay juicy! Always fold in 2 tablespoons of melted ghee or hot mustard oil infused with fenugreek seeds (methi) into your vegetable mix before stuffing.
+          </p>
+        </div>
+
+        <div class="secret-card">
+          <div class="secret-num">03</div>
+          <h3>Never Stick Steamer Liners</h3>
+          <p>
+            Brush your bamboo or metal steamer rack generously with vegetable oil, or line with perforated parchment paper or fresh cabbage leaves. Never put momos onto a dry or cold steamer tier!
+          </p>
+        </div>
+
+        <div class="secret-card">
+          <div class="secret-num">04</div>
+          <h3>Steam Over Roaring Water</h3>
+          <p>
+            Ensure the water in the bottom steamer vessel is boiling vigorously and producing dense steam BEFORE placing the momo tier on top. This sets the wrapper dough instantly.
+          </p>
+        </div>
+
+        <div class="secret-card">
+          <div class="secret-num">05</div>
+          <h3>Thin Edges, Thick Belly</h3>
+          <p>
+            When rolling circular dough wrappers, roll the edges much thinner than the center. The center holds the juicy weight, while the gathered pleats gather up top without turning into a heavy dough lump.
+          </p>
+        </div>
+
+        <div class="secret-card">
+          <div class="secret-num">06</div>
+          <h3>Authentic Timur Sensation</h3>
+          <p>
+            Himalayan Timur (Sichuan pepper) isn't just spicy; it imparts a fragrant citrus tingling sensation. Lightly dry-roast whole timur berries before grinding them finely for your dipping sauces and broths.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Interactive Recipe Modal (Detailed Cooking Walkthrough & Dynamic Servings Scaler) -->
+  <div class="modal-backdrop" id="recipe-modal" aria-hidden="true" role="dialog">
+    <div class="modal-window">
+      <button class="modal-close-btn" id="modal-close" aria-label="Close Recipe">&times;</button>
+      
+      <div class="modal-hero">
+        <img src="" alt="" id="modal-img" class="modal-banner-img">
+        <div class="modal-hero-overlay">
+          <span class="badge" id="modal-category-badge">Style</span>
+          <h2 id="modal-title">Recipe Title</h2>
+          <p id="modal-subtitle">Recipe Subtitle</p>
+        </div>
+      </div>
+
+      <div class="modal-body-content">
+        <!-- Interactive Controls Bar: Servings Scaler & Quick Timer Trigger -->
+        <div class="modal-toolbar">
+          <div class="scaler-control">
+            <span class="scaler-label">Adjust Servings:</span>
+            <div class="scaler-buttons">
+              <button class="scaler-btn" data-servings="2">2 (16 pcs)</button>
+              <button class="scaler-btn active" data-servings="4">4 (32 pcs)</button>
+              <button class="scaler-btn" data-servings="6">6 (48 pcs)</button>
+              <button class="scaler-btn" data-servings="8">8 (64 pcs)</button>
+            </div>
+          </div>
+          <div class="modal-quick-actions">
+            <button class="btn btn-sm btn-primary" id="modal-sync-timer-btn">⏱️ Set Cooking Timer</button>
+          </div>
+        </div>
+
+        <!-- Recipe Content Columns: Ingredients Checklist & Step-by-Step Guide -->
+        <div class="modal-content-grid">
+          
+          <!-- Ingredients Column with Interactive Checklist -->
+          <div class="ingredients-column">
+            <div class="column-header">
+              <h3>Ingredients <span class="servings-indicator" id="current-servings-text">(for 4 servings)</span></h3>
+              <button class="reset-checklist-btn" id="reset-checklist">Uncheck All</button>
+            </div>
+            
+            <div class="ingredients-progress-container">
+              <div class="progress-bar-bg">
+                <div class="progress-bar-fill" id="ingredients-progress"></div>
+              </div>
+              <span class="progress-text" id="ingredients-progress-text">0 / 0 gathered</span>
+            </div>
+
+            <!-- Grouped Ingredients Container -->
+            <div id="modal-ingredients-list" class="ingredients-groups">
+              <!-- Dynamically populated via JS -->
+            </div>
+          </div>
+
+          <!-- Cooking Steps Column with Step Highlights -->
+          <div class="steps-column">
+            <div class="column-header">
+              <h3>Step-by-Step Instructions</h3>
+            </div>
+            
+            <div id="modal-steps-list" class="steps-timeline">
+              <!-- Dynamically populated via JS -->
+            </div>
+
+            <div class="modal-pro-tip-box" id="modal-pro-tip">
+              <!-- Dynamically populated -->
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <div class="logo">
+          <span class="logo-icon">🥟</span>
+          <span class="brand-title">Momo Odyssey</span>
+        </div>
+        <p>Celebrating the sacred culinary traditions of the Himalayas. Hand-rolled with passion, steamed with patience, and savored with friends.</p>
+      </div>
+
+      <div class="footer-links">
+        <h4>The 4 Master Recipes</h4>
+        <ul>
+          <li><a href="#card-veg-momo" class="open-recipe-link" data-recipe-id="veg-momo">Classic Steamed Veg Momo</a></li>
+          <li><a href="#card-c-momo" class="open-recipe-link" data-recipe-id="c-momo">Fiery C Momo (Chilli Sizzler)</a></li>
+          <li><a href="#card-kothey-momo" class="open-recipe-link" data-recipe-id="kothey-momo">Golden Crispy Kothey Momo</a></li>
+          <li><a href="#card-jhol-momo" class="open-recipe-link" data-recipe-id="jhol-momo">Royal Sesame Timur Jhol Momo</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-links">
+        <h4>Culinary Guides</h4>
+        <ul>
+          <li><a href="#pleating">Pleating Techniques</a></li>
+          <li><a href="#chutneys">Achaar & Jhol Broths</a></li>
+          <li><a href="#timer-section">Kitchen Steaming Timer</a></li>
+          <li><a href="#secrets">Moisture & Juiciness Secrets</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2026 Momo Odyssey. Crafted for culinary lovers. Authentic recipes from Kathmandu & the Himalayas.</p>
+      <a href="#top" class="back-to-top">Back to top ↑</a>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
