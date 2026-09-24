@@ -1,0 +1,18 @@
+services:
+  web:
+    build: .
+    ports:
+      - "8080:80"
+    environment:
+      NODE_ENV: production
+    volumes:
+      - mydata:/app/data
+    networks:
+      - app-network
+    restart: unless-stopped
+
+volumes:
+  mydata:
+
+networks:
+  app-network:
